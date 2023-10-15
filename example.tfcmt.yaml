@@ -1,0 +1,19 @@
+ci:
+  owner:
+  - type: envsubst
+    value: suzuki-shunsuke
+  repo:
+  - type: envsubst
+    value: tfcmt
+terraform:
+  plan:
+    template: |
+      ## Plan Result
+      {{if .Result}}
+      <pre><code>{{ .Result }}
+      </pre></code>
+      {{end}}
+      <details><summary>Details (Click me)</summary>
+
+      <pre><code>{{ .CombinedOutput }}
+      </pre></code></details>
